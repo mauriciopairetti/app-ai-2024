@@ -1,0 +1,564 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 85vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f5f5f5;
+    /* Light mode */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #204c84;
+    /* Texto oscuro */
+}
+
+/* Icono del modo oscuro */
+body.dark-mode #toggle-icon {
+    color: #f5f5f5;
+    /* Icono claro */
+}
+body.dark-mode .toggle-dark-mode i {
+    color: #f5f5f5;
+}
+
+/* Icono del modo claro */
+#toggle-icon {
+    color: #333;
+    /* Icono oscuro */
+}
+
+/* Estilos para el modo oscuro */
+body.dark-mode {
+    /* // background-color: #2c2c2c; Dark mode */
+    background-color: #375a92;
+    /* Color de fondo en modo oscuro */
+    color: white;
+    /* Color del texto en modo oscuro */
+
+}
+
+/* Botón de alternancia de modo oscuro/claro */
+.toggle-dark-mode {
+
+    
+    /* color: #f5f5f5; */
+    position: absolute;
+    color: #333;
+
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+}
+.toggle-dark-mode i {
+    color: #333;
+}
+
+
+
+
+/* Configurar el contenedor principal */
+
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    font-family: 'Dosis', sans-serif;
+}
+
+/* Botón del micrófono para que sea amigable con el usuario y abarque todo el ancho */
+.voice-command-user button {
+    width: 100%;
+    background-color: #204c84;
+    color: white;
+    padding: 12px 0px;
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+.voice-command button {
+    border: none;
+    background-color: #204c84;
+    margin-top: 8px;
+    width: 30px;
+        height: 30px;
+        color: white;
+    
+        padding: 4px 2px 4px 2px;
+        
+        border-radius: 20px 20px 20px 20px;
+    /* size: 2px; */
+       font-size: 20px;
+        
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease;
+
+
+}
+.bx-microphone, .bx-loader, .bx-spin{
+    margin-left: 10px;
+}
+
+.voice-command-user button i {
+    margin-right: 10px;
+
+
+
+}
+.voice-command button i {
+    margin-right: 10px;
+
+
+
+}
+
+.voice-command-user button i:hover {
+    animation: tada 0.8s infinite;
+    /* Animación tada en hover */
+}
+.voice-command button i:hover {
+    animation: tada 0.8s infinite;
+    /* Animación tada en hover */
+}
+
+/* Efecto tada */
+@keyframes tada {
+    0% {
+        transform: scale(1);
+    }
+
+    10%,
+    20% {
+        transform: scale(0.9) rotate(-3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale(1.1) rotate(3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: scale(1.1) rotate(-3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.voice-command-user button:hover {
+    background-color: 68bf;
+}
+.voice-command button:hover {
+    background-color: 68bf;
+}
+
+body.dark-mode .voice-command-user button {
+    background-color: #2c2c2c;
+    /* Hover modo oscuro */
+}
+body.dark-mode .voice-command button {
+    background-color: #2c2c2c;
+    /* Hover modo oscuro */
+}
+
+
+
+/* Estilo para la sección de semana */
+.week {
+    display: flex;
+    /* display: none;  */
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #b4ccdc;
+    border-radius: 10px;
+}
+
+/* .planilla {
+    display: none;
+} */
+
+.week-header {
+    width: 15%;
+}
+
+/* .days-container {
+    
+    justify-content: left;
+    margin-left: 80px;
+    
+        
+    flex-wrap: wrap;
+    gap: 20px;
+    
+} */
+
+.days-container {
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos hacia la izquierda */
+    flex-wrap: wrap; /* Permite que los elementos bajen de línea si no caben */
+    gap: 6px; /* Espacio entre los días */
+    margin-left: 22px; /* Eliminamos el margen negativo */
+}
+
+.day {
+    width: 338px;
+    text-align: left;
+    border-left: 1px solid #a1a1a1;
+    border-right: 1px solid #a1a1a1;
+    padding-left: 8px;
+    padding: 5px;
+    margin-bottom: 3px;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* .day {
+   
+    width: 250px;
+    text-align: left;
+    border-left: 1px solid #a1a1a1;
+    border-right: 1px solid #a1a1a1;
+    padding-left: 8px;
+    
+    padding: 5px;
+    margin-bottom: 3px;
+    margin-left: -100px;
+    position: relative;
+    transition: all 0.3s ease;
+
+    
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+} */
+
+.day-header:hover:after {
+    /* content: '→'; */
+    box-shadow: blue;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* .day.minimized {
+    width: 80px;
+    height: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+} 
+
+.day.minimized .day-header p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ .day.minimized .task-list {
+    display: none;
+} */
+.minimized {
+    width: 338px;
+    height: 30px;
+    overflow: hidden;
+}
+/* Estilos para la lista de tareas */
+.task-list {
+
+
+
+    max-width: 150px;
+    /* O el ancho que desees */
+    margin-top: 1px;
+    /* Espacio entre "Día 1" y la lista */
+    padding: 7px;
+    /* Asegúrate de que no haya padding */
+    list-style: none;
+    /* Quitar los puntos de la lista */
+
+    /* /margin: 0 auto; Centra la lista en el contenedor */
+
+}
+
+.task-list li {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 1px;
+    justify-content: flex-start;
+
+    background: none;
+    /* Quitar el fondo blanco */
+    /* border-bottom: 1px solid #e0e0e0;  */
+}
+
+
+
+.task-list li input[type="text"] {
+    border: none;
+    background: none;
+    font-size: 14px;
+    flex-grow: 1;
+}
+
+.task-list li input[type="checkbox"] {
+    margin-right: 2px;
+}
+
+.task-list li i {
+    cursor: pointer;
+    /* margin-left: 5px; */
+}
+
+/* Estilos generales */
+.user-info p {
+    margin: 5px 0px;
+    margin-right: 1px;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info input {
+    border: 1px solid #ccc;
+    padding: 3px;
+    border-radius: 5px;
+    width: 180px;
+    margin-left: 4px;
+}
+
+.info {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* .actions button, .plus-day {
+    background-color: #f1bb1e;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+} */
+
+/* .actions button:hover {
+    background-color: #f1a61e;
+} */
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom:0px;
+   
+    
+    /* margin-top: 110px; */
+}
+
+/* Botón agregar día */
+.add-day {
+    font-size: 15px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-top: 12px;
+}
+
+.plus-day {
+    border: none;
+    background-color: transparent;
+}
+
+.kilos {
+
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    margin-right: 10px;
+    margin-left: 85px;
+    /* Espacio entre los elementos */
+    /* justify-content: flex-end; */
+}
+
+.kilos .kilos-input {
+    width: 23px;
+    /* Hacer el input más pequeño */
+    text-align: center;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.kilos button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    /* Tamaño del signo */
+    cursor: pointer;
+    color: #204c84;
+    /* Color del signo */
+}
+
+.kilos button:focus {
+    outline: none;
+    /* Quitar el borde de enfoque */
+}
+
+.kilos button:hover {
+    color: #1868bf;
+    /* Color al pasar el mouse */
+}
+
+.kilos label {
+    margin-right: 2px;
+    margin-left: -85px;
+    font-size: 16px;
+}
+
+.kilos-select {
+    padding: 1px;
+    border-radius: 7px;
+    border: 1px solid #b4ccdc;
+    font-size: 14px;
+}
+
+/* Estilo adicional para que el botón "+" y "-" queden bien alineados */
+.kilos button.minus-btn {
+    margin-right: -3px;
+    /* Ajustar la posición del botón "-" */
+}
+
+.kilos button.plus-btn {
+    margin-left: -5px;
+    /* Ajustar la posición del botón "+" */
+}
+
+.action-boton {
+    display: flex;
+    align-items: flex-start;
+    padding: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    margin-left: -10px;
+    /* border: none; */
+    cursor: pointer;
+
+    border-left: 1px solid #a1a1a1;
+    color: #204c84;
+}
+
+.action-boton :hover {
+    color: #1868bf;
+    /* Color al pasar el mouse */
+    animation: tada 0.8s infinite;
+}
+
+
+
+.action-boton-voice {
+    padding: 1px;
+    margin-top: 1px;
+    /* margin-bottom: 1px; */
+    margin-left: -10px;
+    /* border: none; */
+    cursor: pointer;
+
+    /* border-left: 1px solid #a1a1a1; */
+    color: #204c84;
+}
+
+
+
+.action-boton-voice:hover {
+    color: #1868bf;
+    /* Color al pasar el mouse */
+    animation: tada 0.8s infinite;
+}
+
+
+.trash-day,
+.plus-day {
+    border: none;
+    /* background-color: transparent; */
+    background-color: #204c84;
+    /* margin-top: 12px; */
+    margin-top: 8px;
+    /* width: 40%; */
+    width: 30px;
+    height: 30px;    
+    color: white;
+    padding: 4px 2px 4px 2px;    
+    border-radius: 20px 20px 20px 20px;
+    /* font-size: 12px; */
+    size: 2px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+   
+
+}
+
+.trash-day:hover,
+.plus-day :hover {
+    color: #ec0606;
+}
+
+.plus-and-trash-day {
+    display: flex;
+    gap: 3px;
+    position: fixed;
+    /* margin-left: 42px; */
+    /* font-size: 20px; */
+    margin-left: 50px;
+    margin-top: -2px;
+}
+.plus-and-trash-day-posteriores {
+    display: flex;
+    gap: 3px;
+    position: fixed;
+    
+    /* font-size: 20px; */
+   
+
+    margin-left: 50px;
+margin-top: -39px;
+
+}
+
+.whatsapp {
+    border: none;
+    color: #204c84;
+    background-color: transparent;
+}
+
+.whatsapp:hover {
+    color: #1868bf;
+    /* Color al pasar el mouse */
+    animation: tada 0.8s infinite;
+}

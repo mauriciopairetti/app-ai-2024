@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Rutinas GYM</title>
+    <!-- Iconos y fuentes -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="voice-command-user">
+
+            <button id="mic-btn-user"> <i class='bx bx-microphone'></i> Iniciar carga de usuario</button>
+        </div>
+
+
+        <div class="user-info">
+            <p class="info">USUARIO:<input type="text" id="usuario"></p>
+            <p class="info">PESO: <input type="text" id="peso"></p>
+            <p class="info">ALTURA: <input type="text" id="altura"></p>
+            <!-- <p class="info">I.M.C: <input type="text" id="ipc"></p> -->
+            <p class="info">I.M.C: <span id="ipc"></span> <input type="text" id="ipc"></p>
+            
+            <p class="info">RUTINA N°: <input type="text" id="rutina"></p>
+        </div>
+
+
+        <button id="toggle-dark-mode" class="toggle-dark-mode">
+            <i class='bx bx-sun bx-flip-horizontal' id="toggle-icon"></i>
+        </button>
+
+
+
+        <div id="planilla" class="planilla" style="display:none">
+            <!-- <div id="planilla" class="planilla"> -->
+
+            <!-- <div class="voice-command">
+
+                <button id="mic-btn"> <i class='bx bx-microphone'></i>CARGA RUTINA</button>
+            </div> -->
+
+            <!-- Sección de Rutinas (Oculto hasta que se ingresen los datos) -->
+            <div class="week">
+
+                <div class="week-header">
+                    <button id="share-whatsapp" class="whatsapp">
+                        <i class='bx bxl-whatsapp'></i>
+                    </button>
+                    <p>Semana 1</p>
+                    <h5>fecha: <span id="fecha"></span></h5>
+
+                    <button class="add-week">+</button>
+                </div>
+                <div class="days-container" id="days-container">
+                    <!-- Los días se agregarán aquí dinámicamente -->
+
+                    <div class="day">
+                        <div class="day-header">
+
+                            <button id="add-day" class="add-day">DIA 1</button>
+                            
+                            
+                            <div class="plus-and-trash-day">
+                                <button id="plus-day" class="plus-day">
+                                    <i class='bx bx-plus-medical'></i>
+                                </button>
+
+                                <button class="trash-day">
+                                    <i class='bx bxs-trash'></i>
+                                </button>
+
+
+                                <div class="voice-command">
+                                    
+
+                                    <button id="mic-btn-day"> <i class="bx bx-microphone"></i></button>
+                                    
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- <ul class="task-list" id="task-list"></ul> -->
+                             <ul class="task-list" id="task-list-day"></ul>
+                             <!-- <ul class="task-list" id="task-list-day-${dayCount}"></ul> -->
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+</body>
+<script src="./assets/js/app.js"></script>
+<script src="./ASSETS/js/dark-light.js"></script>
+<script src="./ASSETS/js/load-user.js"></script>
+<script src="https://kit.fontawesome.com/f39a96e654.js" crossorigin="anonymous"></script>
+
+</html>
